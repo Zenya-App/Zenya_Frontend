@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Accordion from '../components/Accordion';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -35,9 +36,9 @@ const Homepage = () => {
             business, Zenya simplifies currency tracking, remittance comparison, and multi-currency budgeting in one unified platform.
             </p>
             <div className="space-x-6">
-              <button className="px-8 py-3 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-100 transition duration-300 text-lg shadow-lg">
-                Get Started
-              </button>
+              <Link to="/signup" className="inline-block px-8 py-3 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-100 transition duration-300 text-lg shadow-lg">
+                Sign Up Now
+              </Link>
               <button className="px-8 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-700 transition duration-300 text-lg">
                 Learn More
               </button>
@@ -149,8 +150,6 @@ const Homepage = () => {
   </div>
 </section>
 
-       
-
         {/* Why Choose Us Section */}
         <section
           className="py-16 bg-white dark:bg-gray-800"
@@ -244,7 +243,7 @@ const Homepage = () => {
         </section>
 
         {/* Pricing Plans Section */}
-        <section
+        {/* <section
           id="pricing"
           className="py-16 bg-gray-100 dark:bg-gray-800"
           data-aos="fade-up"
@@ -273,7 +272,7 @@ const Homepage = () => {
               </button>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Testimonials Section */}
 <section
@@ -397,9 +396,9 @@ const Homepage = () => {
           <div>
             <h2 className="text-3xl font-bold mb-4">Start Saving Money Today!</h2>
             <div className="space-x-4">
-              <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
+              <Link to="/signup" className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
                 Sign Up for Free
-              </button>
+              </Link>
               <button className="px-6 py-3 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300">
                 View Dashboard
               </button>

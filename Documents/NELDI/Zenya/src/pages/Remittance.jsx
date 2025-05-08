@@ -29,9 +29,9 @@ const strategicCorridors = [
 
 // Updated delivery methods with percentage-based fees
 const deliveryMethods = [
-  { id: 'mobile', name: 'Mobile Money', icon: '📱', feePercentage: 1.2, time: 'Instant - 1 hour', providers: ['M-Pesa', 'Orange Money', 'MTN Money'] },
-  { id: 'wallet', name: 'Digital Wallet', icon: '💼', feePercentage: 0.8, time: 'Instant', providers: ['Zenya Wallet', 'Chipper Cash'] },
-  { id: 'bank', name: 'Bank Transfer', icon: '🏦', feePercentage: 2.0, time: '1-2 business days', providers: ['All major banks'] },
+  { id: 'mobile', name: 'Mobile Money', icon: '📱', feePercentage: 2.2, time: 'Instant - 1 hour', providers: ['M-Pesa', 'Orange Money', 'MTN Money'] },
+  { id: 'wallet', name: 'Digital Wallet', icon: '💳', feePercentage: 0.8, time: 'Instant', providers: ['Zenya Wallet', 'Chipper Cash', 'PalmPay'] },
+  { id: 'bank', name: 'Bank Transfer', icon: '🏦', feePercentage: 3.5, time: '1-2 business days', providers: ['All major banks'] },
   { id: 'cash', name: 'Cash Pickup', icon: '💵', feePercentage: 2.5, time: 'Same day', providers: ['Local agents'] }
 ];
 
@@ -51,7 +51,7 @@ const Remittance = () => {
   const [receiveAmount, setReceiveAmount] = useState('9.00');
   const [deliveryMethod, setDeliveryMethod] = useState('mobile');
   const [exchangeRate, setExchangeRate] = useState(0.009);
-  const [feePercentage, setFeePercentage] = useState(1.2); // Changed from fixed fee to percentage
+  const [feePercentage, setFeePercentage] = useState(3.2); // Changed from fixed fee to percentage
   const [feeAmount, setFeeAmount] = useState(12); // Fee amount calculated based on percentage
   const [step, setStep] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
@@ -436,27 +436,6 @@ const Remittance = () => {
                     />
                   </div>
 
-                  {deliveryMethod === 'bank' && (
-                    <>
-                      <div className="mb-6">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Bank Name</label>
-                        <input
-                          type="text"
-                          className="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-                          placeholder="First Bank of Nigeria"
-                        />
-                      </div>
-                      <div className="mb-6">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Account Number</label>
-                        <input
-                          type="text"
-                          className="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-                          placeholder="0123456789"
-                        />
-                      </div>
-                    </>
-                  )}
-
                   {deliveryMethod === 'mobile' && (
                     <>
                       <div className="mb-6">
@@ -493,6 +472,93 @@ const Remittance = () => {
                           type="text"
                           className="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
                           placeholder="+234 800 123 4567"
+                        />
+                      </div>
+                    </>
+                  )}
+
+                  {deliveryMethod === 'wallet' && (
+                    <>
+                      <div className="mb-6">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Select Wallet Provider</label>
+                        <select
+                          className="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+                        >
+                          <option value="">Select a wallet provider</option>
+                          {receiveCountry === 'Ghana' && (
+                            <>
+                              <option>Zenya Wallet</option>
+                              <option>Chipper Cash</option>
+                              <option>Zeepay</option>
+                              <option>ExpressPay</option>
+                            </>
+                          )}
+                          {receiveCountry === 'Nigeria' && (
+                            <>
+                              <option>Zenya Wallet</option>
+                              <option>PalmPay</option>
+                              <option>OPay</option>
+                              <option>Kuda</option>
+                              <option>Chipper Cash</option>
+                            </>
+                          )}
+                          {receiveCountry === 'Kenya' && (
+                            <>
+                              <option>Zenya Wallet</option>
+                              <option>Chipper Cash</option>
+                              <option>Flutterwave</option>
+                            </>
+                          )}
+                          {['Uganda', 'Rwanda', 'Tanzania', 'South Africa'].includes(receiveCountry) && (
+                            <>
+                              <option>Zenya Wallet</option>
+                              <option>Chipper Cash</option>
+                            </>
+                          )}
+                        </select>
+                        <p className="text-xs text-green-600 mt-1">✓ Lowest fees (0.8%) • Fastest transfer speed</p>
+                      </div>
+                      
+                      <div className="mb-6">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Recipient's Wallet ID</label>
+                        <input
+                          type="text"
+                          className="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+                          placeholder="Enter wallet ID or username"
+                        />
+                      </div>
+                      
+                      <div className="mb-6 bg-blue-50 p-4 rounded-lg">
+                        <div className="flex items-start">
+                          <div className="text-blue-500 mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                            </svg>
+                          </div>
+                          <div className="text-sm text-blue-800">
+                            <p>Transfer directly to a digital wallet for instant settlement with the lowest fees. The recipient can withdraw to their bank account or mobile money at any time.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  )}
+
+                  {deliveryMethod === 'bank' && (
+                    <>
+                      <div className="mb-6">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Bank Name</label>
+                        <input
+                          type="text"
+                          className="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+                          placeholder="First Bank of Nigeria"
+                        />
+                      </div>
+                      <div className="mb-6">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Account Number</label>
+                        <input
+                          type="text"
+                          className="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+                          placeholder="0123456789"
                         />
                       </div>
                     </>
@@ -578,6 +644,19 @@ const Remittance = () => {
                           <span className="text-gray-600">Mobile Money:</span>
                           <span className="ml-2">+234 800 123 4567</span>
                         </div>
+                      )}
+                      
+                      {deliveryMethod === 'wallet' && (
+                        <>
+                          <div>
+                            <span className="text-gray-600">Wallet Provider:</span>
+                            <span className="ml-2">Zenya Wallet</span>
+                          </div>
+                          <div>
+                            <span className="text-gray-600">Wallet ID:</span>
+                            <span className="ml-2">john.doe@zenya</span>
+                          </div>
+                        </>
                       )}
                       
                       <div>

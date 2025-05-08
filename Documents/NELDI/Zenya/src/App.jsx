@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Homepage from './pages/Homepage';
+import FinanceAdBanner from './components/FinanceAdBanner'; // New ad component
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import ForgotPassword from './pages/ForgotPassword';
@@ -13,14 +12,16 @@ import CurrencyConverter from './pages/Platforms';
 import BusinessDashboard from './pages/BusinessDashboard';
 import AlertsPage from './pages/AlertsPage';
 import Remittance from './pages/Remittance';
+import HomePage from './pages/Home';
+
 
 const App = () => {
   return (
     <ThemeProvider> {/* Wrap the entire app with ThemeProvider */}
       <Router>
-        <Navbar />
+        <FinanceAdBanner /> {/* Replace Navbar with FinanceAdBanner */}
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />

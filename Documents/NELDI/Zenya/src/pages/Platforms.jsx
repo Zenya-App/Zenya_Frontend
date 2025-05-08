@@ -190,110 +190,110 @@ const platformRates = {
     "USD-GHS": 11.05,
     "EUR-GHS": 13.10,
     "USD-KES": 132.30,
-    "USD-NGN": 1450.75,
+    "USD-NGN": 1609.75,
     "GBP-GHS": 14.25,
     "USD-ZAR": 18.20,
-    "EUR-NGN": 1560.40
+    "EUR-NGN": 1725.80
   },
   "Remitly": {
     "USD-GHS": 10.90,
     "EUR-GHS": 12.95,
     "USD-KES": 130.50,
-    "USD-NGN": 1442.10,
+    "USD-NGN": 1600.50,
     "GBP-GHS": 14.00,
     "USD-ZAR": 18.00,
-    "EUR-NGN": 1550.75
+    "EUR-NGN": 1715.60
   },
   "WorldRemit": {
     "USD-GHS": 11.00,
     "EUR-GHS": 12.88,
     "USD-KES": 131.90,
-    "USD-NGN": 1430.25,
+    "USD-NGN": 1590.25,
     "GBP-GHS": 14.05,
     "USD-ZAR": 17.90,
-    "EUR-NGN": 1520.00
+    "EUR-NGN": 1698.50
   },
   "PaySend": {
     "USD-GHS": 10.80,
     "EUR-GHS": 12.75,
     "USD-KES": 129.90,
-    "USD-NGN": 1405.00,
+    "USD-NGN": 1580.00,
     "GBP-GHS": 13.85,
     "USD-ZAR": 17.85,
-    "EUR-NGN": 1510.30
+    "EUR-NGN": 1690.30
   },
   "SendWave": {
     "USD-GHS": 11.00,
     "USD-KES": 132.00,
-    "USD-NGN": 1448.60,
+    "USD-NGN": 1605.60,
     "USD-ZAR": 18.10
   },
   "Xoom": {
     "USD-GHS": 10.85,
-    "USD-NGN": 1435.75,
+    "USD-NGN": 1595.75,
     "USD-KES": 131.20,
     "EUR-GHS": 12.90,
     "USD-ZAR": 17.95,
-    "EUR-NGN": 1535.60
+    "EUR-NGN": 1705.60
   },
   "Western Union": {
     "USD-GHS": 10.70,
     "USD-KES": 129.80,
-    "USD-NGN": 1400.00,
+    "USD-NGN": 1570.00,
     "USD-ZAR": 17.60
   },
   "MoneyGram": {
     "USD-GHS": 10.60,
     "USD-KES": 129.00,
-    "USD-NGN": 1390.00,
+    "USD-NGN": 1565.00,
     "USD-ZAR": 17.55
   },
   "Azimo": {
     "USD-GHS": 10.95,
     "USD-KES": 130.70,
-    "USD-NGN": 1420.00,
-    "EUR-NGN": 1530.00,
+    "USD-NGN": 1585.00,
+    "EUR-NGN": 1700.00,
     "USD-ZAR": 17.80
   },
   "Skrill": {
     "USD-GHS": 10.75,
     "USD-KES": 130.10,
-    "USD-NGN": 1415.00,
-    "EUR-NGN": 1540.20,
+    "USD-NGN": 1582.50,
+    "EUR-NGN": 1702.20,
     "USD-ZAR": 18.05
   },
   "Revolut": {
     "USD-GHS": 11.02,
     "EUR-GHS": 13.05,
     "USD-KES": 131.50,
-    "USD-NGN": 1448.10,
+    "USD-NGN": 1608.10,
     "GBP-GHS": 14.10,
     "USD-ZAR": 18.15,
-    "EUR-NGN": 1555.00
+    "EUR-NGN": 1720.00
   },
   "XE": {
     "USD-GHS": 10.92,
     "EUR-GHS": 12.98,
     "USD-KES": 130.80,
-    "USD-NGN": 1438.00,
+    "USD-NGN": 1598.00,
     "GBP-GHS": 13.95,
     "USD-ZAR": 18.00,
-    "EUR-NGN": 1540.90
+    "EUR-NGN": 1710.90
   },
   "XTransfer": {
     "USD-GHS": 11.10,
     "USD-KES": 133.00,
-    "USD-NGN": 1452.50,
+    "USD-NGN": 1612.50,
     "USD-ZAR": 18.25
   },
   "Nium": {
     "USD-GHS": 11.00,
     "EUR-GHS": 13.00,
     "USD-KES": 132.50,
-    "USD-NGN": 1450.00,
+    "USD-NGN": 1609.27,
     "GBP-GHS": 14.20,
     "USD-ZAR": 18.10,
-    "EUR-NGN": 1558.75
+    "EUR-NGN": 1723.80
   }
 };
 
